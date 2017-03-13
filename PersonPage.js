@@ -30,7 +30,13 @@ class PersonPage extends Component {
       </View>
     );
   }
-  gotoNext() {}
+
+  gotoNext(){
+    this.props.navigator.push({
+      id: 'NoNavigatorPage',
+      sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
+    });
+  }
 }
 
 var NavigationBarRouteMapper = {

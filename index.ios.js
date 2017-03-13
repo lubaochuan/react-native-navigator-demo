@@ -11,6 +11,7 @@ var SplashPage = require('./SplashPage');
 var LoginPage = require('./LoginPage');
 var MainPage = require('./MainPage');
 var PersonPage = require('./PersonPage');
+var NoNavigatorPage = require('./NoNavigatorPage');
 
 class RN_NavigatorDemo extends Component {
   render() {
@@ -50,6 +51,12 @@ class RN_NavigatorDemo extends Component {
     if (routeId === 'PersonPage') {
       return (
         <PersonPage
+          navigator={navigator} />
+      );
+    }
+    if (routeId === 'NoNavigatorPage') {
+      return (
+        <NoNavigatorPage
           navigator={navigator} />
       );
     }
