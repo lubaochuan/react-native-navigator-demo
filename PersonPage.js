@@ -51,7 +51,14 @@ var NavigationBarRouteMapper = {
     );
   },
   RightButton(route, navigator, index, nextState) {
-    return null;
+    return (
+      <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}
+        onPress={() => navigator.parentNavigator.push({id: 'unknown'})}>
+        <Text style={{color: 'white', margin: 10,}}>
+          unknown page
+        </Text>
+      </TouchableOpacity>
+    );
   },
   Title(route, navigator, index, nextState) {
     return (

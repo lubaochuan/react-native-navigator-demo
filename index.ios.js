@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Navigator,
+  TouchableOpacity
 } from 'react-native';
 
 var SplashPage = require('./SplashPage');
@@ -60,6 +61,17 @@ class RN_NavigatorDemo extends Component {
           navigator={navigator} />
       );
     }
+    return this.noRoute(navigator);
+  }
+  noRoute(navigator) {
+    return (
+      <View style={{flex: 1, alignItems: 'stretch', justifyContent: 'center'}}>
+        <TouchableOpacity style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
+          onPress={() => navigator.pop()}>
+          <Text style={{color: 'red', fontWeight: 'bold'}}>add a route to this page in renderScene</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 }
 
