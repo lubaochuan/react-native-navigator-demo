@@ -5,6 +5,7 @@ import {
   View,
   StyleSheet,
   Navigator,
+  TouchableHighlight,
 } from 'react-native';
 
 class LoginPage extends Component {
@@ -22,10 +23,20 @@ class LoginPage extends Component {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>This is the Login Page.</Text>
+        <TouchableHighlight
+          onPress={this.gotoNext.bind(this)}>
+          <Text style={{color: 'red'}}>Go to Main Page</Text>
+        </TouchableHighlight>
       </View>
     );
   }
-  gotoNext() {}
+
+  gotoNext() {
+    this.props.navigator.push({
+      id: 'MainPage',
+      name: 'Main Page',
+    });
+  }
 }
 
 var NavigationBarRouteMapper = {

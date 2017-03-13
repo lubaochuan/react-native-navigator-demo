@@ -9,6 +9,7 @@ import {
 
 var SplashPage = require('./SplashPage');
 var LoginPage = require('./LoginPage');
+var MainPage = require('./MainPage');
 
 class RN_NavigatorDemo extends Component {
   render() {
@@ -36,6 +37,12 @@ class RN_NavigatorDemo extends Component {
     if (routeId === 'LoginPage') {
       return (
         <LoginPage
+          navigator={navigator} />
+      );
+    }
+    if (routeId === 'MainPage') {
+      return (
+        <MainPage
           navigator={navigator} />
       );
     }
